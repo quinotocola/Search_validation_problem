@@ -13,7 +13,7 @@ public class AplicacionesPage {
     public Button firstpg = new Button(By.xpath("(//a[@class='page-link']/*)[2]"));
     public Button noGratis = new Button(By.xpath("(//span[contains(text(),'MXN$')])[1]"));
     int cont = 0;
-    String str ="";
+    static String st ="";
     public void getElements(){
         List<WebElement> listobj = Session.getInstance().getBrowser().findElements(By.xpath("//div[@class='card h-100 material-card depth-4 depth-8-hover pb-4']"));
 
@@ -37,9 +37,9 @@ public class AplicacionesPage {
 
     }
 
-    public static Object getNonFree(){
+    public void getNonFree(){
         WebElement e = Session.getInstance().getBrowser().findElement(By.xpath("(//span[contains(text(),'MXN$')])[1]"));
         //System.out.println(e.getText());
-        return e;
+        st = e.getText().toString();
     }
 }

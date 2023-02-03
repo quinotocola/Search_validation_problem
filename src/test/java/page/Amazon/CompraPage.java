@@ -9,11 +9,12 @@ public class CompraPage {
     public Button addToCart = new Button(By.id("add-to-cart-button"));
 
 
-    public static Object checkCompra(){
+    static String str ="";
+    public void checkCompra(){
         WebElement e = Session.getInstance().getBrowser().findElement(By.id("productTitle"));
 
-        String nom = e.getText().toString();
-        //System.out.println(nom);
-        return nom;
+        str = e.getText().toString();
+        //System.out.println(str);
+
     }
 }
